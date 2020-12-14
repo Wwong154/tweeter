@@ -8,3 +8,7 @@ header {
   background-color: #d4bb96;
   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
 }
+
+.lastName {
+  font-weight: normal;
+}

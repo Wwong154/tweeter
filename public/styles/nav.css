@@ -4,10 +4,32 @@ nav {
   width: 100%;
   background-color: #4056A1;
   color: #FFFFFF;
+  justify-content: space-between;
 }
 
-span {
+#logo {
   font-family: 'Bungee';
   align-self: center;
   margin-left: 1.5em;
+}
+
+.nav-btn {
+  display: flex;
+  flex-direction: column;
+  margin-right: 1.5em;
+  justify-content: center;
+}
+
+#write-btn {
+  font-size: 15px;
+}
+
+.write {
+  font-weight: 700;
+}
+
+i {
+  height: 15px;
+  color: red;
+  align-self: center;
 }
