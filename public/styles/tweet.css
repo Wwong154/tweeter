@@ -60,7 +60,7 @@ article {
 
 .handleName {
   visibility: hidden;
-  color: gray;
+  color: rgb(150, 150, 150);
   margin-right: 0.5em;
 }
 
@@ -103,7 +103,8 @@ article {
   margin: 0%;
 }
 
-.tweet-footer div span {
+.tweet-date {
+  font-weight: 100;
   font-size: small;
   align-self: center;
 }
@@ -112,4 +113,9 @@ article {
   display: flex;
   width: 70px;
   justify-content: space-between;
+  align-content: center;
+}
+
+.react-icon i {
+  font-size: 12px;
 }
