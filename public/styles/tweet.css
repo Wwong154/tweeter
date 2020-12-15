@@ -1,13 +1,16 @@
+/*overall old tweet aera*/
 #tweet-container {
   display: flex;
   flex-direction: column;
 }
 
+/*layout to make the hover animation*/
 .focus_effect {
   display: flex;
   flex-direction: column;
 }
 
+/*bottom shadow of the tweet, hidden when not active*/
 .shadow {
   height: 8px;
   margin-left: 16px;
@@ -16,14 +19,17 @@
   visibility: hidden;
 }
 
+/*spacer added to side to make things look good and center*/
 .sideSpacer {
   display: flex;
 }
 
+/*default offset to left*/
 .leftSpacer {
   width: 8px;
 }
 
+/*shadow effect at right*/
 .rightSpacer {
   width: 8px;
   margin-top: 8px;
@@ -31,17 +37,17 @@
   visibility: hidden;
 }
 
-article {
+/*meat of tweet*/
+.tweet-card {
   display: flex;
   width: 100%;
   height: 100%;
   background-color:  #f4f1ec;
-  flex-direction: column;
+  flex-direction: column; /**/
   min-height: 200px;
   border: 4px solid #333333;
   justify-content: space-between;
 }
-
 
 .tweet-header {
   display: flex;

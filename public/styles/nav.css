@@ -1,13 +1,13 @@
+/*nav aera define*/
 nav {
   display: flex;
+  position: fixed; /*Set the navbar to fixed position*/
   height: 120px;
   width: 100%;
+  top: 0; /*Position at top*/
   background-color: #4056A1;
   color: #FFFFFF;
   justify-content: space-between;
-  position: fixed; /* Set the navbar to fixed position */
-  top: 0; /* Position the navbar at the top of the page */
-  width: 100%; /* Full width */
 }
 
 #logo {
@@ -16,6 +16,7 @@ nav {
   margin-left: 1.5em;
 }
 
+/*btn to write tweet, to be added*/
 .nav-btn {
   display: flex;
   flex-direction: column;
@@ -23,14 +24,17 @@ nav {
   justify-content: center;
 }
 
+/*text of the btn*/
 #write-btn {
   font-size: 15px;
 }
 
+/*styling for the word write*/
 .write {
   font-weight: 700;
 }
 
+/*the down arrow*/
 .nav-btn i {
   height: 15px;
   color: #ff392e;
