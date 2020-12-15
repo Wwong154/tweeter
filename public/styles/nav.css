@@ -28,7 +28,7 @@ nav {
   font-weight: 700;
 }
 
-i {
+.nav-btn i {
   height: 15px;
   color: #ff392e;
   align-self: center;
