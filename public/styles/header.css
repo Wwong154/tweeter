@@ -12,3 +12,7 @@ header {
 .lastName {
   font-weight: normal;
 }
+
+.userName {
+  margin-top: 0px;
+}
