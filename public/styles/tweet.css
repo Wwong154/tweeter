@@ -11,7 +11,9 @@
 .shadow {
   height: 8px;
   margin-left: 16px;
-  margin-bottom: 16px;
+  margin-bottom: 32px;
+  background-color: skyblue;
+  visibility: hidden;
 }
 
 .sideSpacer {
@@ -25,6 +27,8 @@
 .rightSpacer {
   width: 8px;
   margin-top: 8px;
+  background-color: skyblue;
+  visibility: hidden;
 }
 
 article {
@@ -55,6 +59,8 @@ article {
 }
 
 .handleName {
+  visibility: hidden;
+  color: gray;
   margin-right: 0.5em;
 }
 
@@ -65,6 +71,7 @@ article {
   justify-content: center;
   align-self: center;
   border-bottom: 4px solid #333333;
+  font-weight: 300;
 }
 
 .tweet-content p{
