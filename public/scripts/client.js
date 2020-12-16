@@ -129,7 +129,7 @@ $(document).ready(function() {
     .append($sideSpacer)
     .append($bottomeShadow);
 
-    return $completeTweet
+    return $completeTweet;
   }  
   
   //initial tweet load

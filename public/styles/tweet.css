@@ -138,3 +138,22 @@
 .react-icon i {
   font-size: 12px;
 }
+
+.focus_effect:hover > .shadow{
+  visibility: visible;
+}
+.focus_effect:hover > .sideSpacer > .rightSpacer{
+  visibility: visible;
+}
+.focus_effect:hover > .sideSpacer > article > .tweet-header > .handleName{
+  visibility: visible;
+}
+.focus_effect:hover > .sideSpacer > article > .tweet-header > .other-user {
+  font-weight: 700;
+}
+.focus_effect:hover > .sideSpacer > article > .tweet-content {
+  font-weight: 600;
+}
+.focus_effect:hover > .sideSpacer > article > .tweet-footer > div > .tweet-date{
+  font-weight: 400;
+}
