@@ -61,7 +61,19 @@
 }
 
 .other-user {
-  margin-left: 0.5em;
+  display: flex;
+  justify-self: start;
+  margin-left: 0.15em;
+}
+
+.profile-pic {
+  width: 30px;
+  height: 30px;
+}
+
+.userName {
+  margin-left: 5px;
+  align-self: center;
 }
 
 .handleName {
@@ -100,7 +112,7 @@
   margin: 0.5em;
 }
 
-.tweet-footer div {
+.footer-wrap {
   display: flex;
   width: 95%;
   align-content: center;
