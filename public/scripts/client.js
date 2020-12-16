@@ -6,34 +6,40 @@
 
 // Test / driver code (temporary). Eventually will get this from the server.
 $(document).ready(function() {
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
+
+  $(".nav-btn").on('click', function () {
+    $('html').animate({scrollTop : 0}, 300);
+    $("#tweet-text").focus();
+  })
+
+  $(".tweet-submit").on('submit', function (event) {
+    event.preventDefault();
+    $(".error").hide()
+    let $tweet = $(this).children("#tweet-text").val().length;
+    console.log($tweet)
+    if (!$tweet) {
+      $(this).children(".error").text("⚠️  Error: Tweet is empty!  ⚠️")
+      $(".error").slideDown()
+    } else if ($tweet > 140){
+      $(this).children(".error").text("⚠️  Error: Excess character limit!  ⚠️")
+      $(".error").slideDown()
+    } else {
+    $.ajax("/tweets", {method: 'POST', data: $(".tweet-submit").serialize()})
+    .then(function () {
+      $("#tweet-text").val("");
+      loadtweets();
+      })
     }
-  ]
+  });
+
+  const loadtweets = function() {
+    $.ajax("/tweets", {method: 'GET'})
+    .then(function (something) {
+      renderTweets(something);})
+  }
 
   const renderTweets = function(tweets) {
     $("#tweet-container").empty();
-    console.log("render?")
     tweets.forEach(info => {
       $("#tweet-container").prepend(createTweetElement(info));
     });
@@ -126,5 +132,7 @@ $(document).ready(function() {
     return $completeTweet
   }  
   
-  renderTweets(data);
+  //initial tweet load
+  loadtweets();
+  $(".error").hide()
 })

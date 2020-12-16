@@ -101,6 +101,7 @@
   margin-right: 0%;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
+  overflow-wrap: break-word;
 }
 
 .tweet-footer {
