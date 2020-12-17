@@ -1,12 +1,19 @@
 #user_info {
   display: flex;
   height: 400px;
-  width: 100%;
+  width: 31%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: #d4bb96;
   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-bottom: -260px; /* half of this and nav total to center */
+  position: fixed;
+  z-index: 1;
+  bottom: 50%;
+  left: 0;
 }
 
 .lastName {
@@ -17,4 +24,12 @@
   text-align: center;
   margin-top: 0px;
   margin-bottom: 0px;
+}
+
+@media only screen and (max-width: 768px) {
+  #user_info {
+    width: 100%;
+    margin: 0;
+    position: relative;
+  }
 }

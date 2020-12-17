@@ -36,7 +36,7 @@ $(document).ready(function() {
       $(this).children(".error").text("⚠️  Error: Tweet is empty!  ⚠️")
       $(".error").slideDown()
     } else if ($tweet > 140){
-      $(this).children(".error").text("⚠️  Error: Excess character limit!  ⚠️")
+      $(this).children(".error").text("⚠️  Error: Excess 140 characters limit!  ⚠️")
       $(".error").slideDown()
     } else {
     $.ajax("/tweets", {method: 'POST', data: $(".tweet-submit").serialize()})

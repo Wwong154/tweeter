@@ -8,6 +8,7 @@ nav {
   background-color: #4056A1;
   color: #FFFFFF;
   justify-content: space-between;
+  z-index: 2;
 }
 
 #logo {
@@ -40,4 +41,13 @@ nav {
   height: 15px;
   color: #ff392e;
   align-self: center;
+}
+
+@media only screen and (max-width: 768px) {
+  nav {
+    position: relative;
+    background-color: #d4bb96;
+    background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
+    height: 60px;
+  }
 }
