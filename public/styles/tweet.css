@@ -79,7 +79,6 @@
 
 /*only turn visible when hover over on as per project specified*/
 .handleName {
-  visibility: hidden;
   color: rgb(150, 150, 150);
   margin-right: 0.5em;
 }
@@ -157,7 +156,7 @@
   visibility: visible;
 }
 .focus_effect:hover > .sideSpacer > article > .tweet-header > .handleName{
-  visibility: visible;
+  font-weight: 700;
 }
 .focus_effect:hover > .sideSpacer > article > .tweet-header > .other-user {
   font-weight: 700;
