@@ -6,6 +6,21 @@
 
 // Test / driver code (temporary). Eventually will get this from the server.
 $(document).ready(function() {
+  
+  $(window).on('scroll', function (event) {
+    let $scroll = $(window).scrollTop();
+    // Do something
+    if ($scroll > 450) {
+      $('.btn-scroll').css("visibility","visible")
+    } else {
+      $('.btn-scroll').css("visibility","hidden")
+    }
+  });
+
+  $(".btn-scroll").on('click', function () {
+    $('html').animate({scrollTop : 0}, 300);
+    $("#tweet-text").focus();
+  })
 
   $(".nav-btn").on('click', function () {
     $('html').animate({scrollTop : 0}, 300);
@@ -45,6 +60,7 @@ $(document).ready(function() {
     });
   }
 
+  //calculate time
   const timePass = function(created) {
     const now = Date.now();
     const pastSec = Math.floor((now - created) / 1000);

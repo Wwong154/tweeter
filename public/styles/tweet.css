@@ -133,6 +133,7 @@
   width: 70px;
   justify-content: space-between;
   align-content: center;
+  visibility: hidden;
 }
 
 .react-icon i {
@@ -156,4 +157,7 @@
 }
 .focus_effect:hover > .sideSpacer > article > .tweet-footer > div > .tweet-date{
   font-weight: 400;
+}
+.focus_effect:hover > .sideSpacer > article > .tweet-footer > div > .react-icon{
+  visibility: visible;
 }

@@ -22,6 +22,7 @@ nav {
   flex-direction: column;
   margin-right: 1.5em;
   justify-content: center;
+  cursor: pointer;
 }
 
 /*text of the btn*/

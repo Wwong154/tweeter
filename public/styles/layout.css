@@ -35,3 +35,28 @@ main {
   width: 90%;
   background-color: #f4f1ec;
 }
+
+.btn-scroll {
+  display: flex;
+  position: fixed;
+  align-content: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  bottom: 1em;
+  right: 1em;
+  border-radius: 50%;
+  background-color: #4056A1;
+}
+
+.btn-scroll {
+  cursor: pointer;
+  visibility: hidden;
+}
+
+.btn-scroll i {
+  margin-top: 5px;
+  width: 30px;
+  height: 30px;
+  color:#ff392e;
+}
