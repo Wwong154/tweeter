@@ -14,12 +14,12 @@ html {
  * Global layout stuff
  */
 
-body {
-  margin-top: 120px;
+body { 
+  margin-top: 120px;/*margin on top to adjjust for nav bar on desktop*/
   display: flex;
   color: #545149;
   background-color: #f4f1ec;
-  font-size: 24px;
+  font-size: larger;
   font-family: 'Source Sans Pro';
   flex-direction: row;
   align-items: center;
@@ -30,43 +30,52 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
-main {
+main { /*tweet area*/
   display: flex;
   flex-direction: column;
-  width: 63%;
-  margin-right: 2%;
+  width: 58%; /*58% for desktop version from right*/
+  margin: 2%; /*not really needed, but just in case*/
   background-color: #f4f1ec;
 }
 
 .btn-scroll {
-  display: flex;
-  position: fixed;
+  position: fixed; /* not really need, but will make transition anime smoother */
   align-content: center;
   justify-content: center;
-  width: 60px;
-  height: 60px;
-  bottom: 1em;
-  right: 1em;
-  border-radius: 50%;
-  background-color: #4056A1;
-  cursor: pointer;
-  visibility: hidden;
+  visibility: hidden; /*should not be use on desktop*/
 }
 
-.btn-scroll i {
-  margin-top: 5px;
-  width: 30px;
-  height: 30px;
-  color:#ff392e;
+.btn-scroll i{
+  visibility: hidden; /*should not be use on desktop*/
 }
 
 @media only screen and (max-width: 768px) {
-  body {
+  body { /*turn row to column when on moblie*/
     margin-top: 0;
     flex-direction: column;
   }
   main {
-    width: 90%;
+    width: 90%; /*to take up 90% of total width*/
     margin: 0;
   }
+
+  .btn-scroll {
+    display: none; /*shall not be display until user scroll to certain point, handle by JQery*/
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 1em;
+    right: 1em;
+    border-radius: 50%; /*make circle of full 60px*/
+    background-color: #4056A1;
+    cursor: pointer; /*change cursor when hover on*/
+    visibility: visible;
+  }
+  
+  .btn-scroll i {
+    margin-top: 10.75px; /*to center*/
+    color:#ff392e;
+    visibility: visible;
+  }
+  
 }

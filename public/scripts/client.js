@@ -6,62 +6,63 @@
 
 // Test / driver code (temporary). Eventually will get this from the server.
 $(document).ready(function() {
-  
-  $(window).on('scroll', function (event) {
+  // hide error, since there should be no error on initial load
+  $(".error").hide()
+
+  $(window).on('scroll', function (event) { // if window scroll, log where, if past write tweet area, scroll btn appear(on moblie only)
     let $scroll = $(window).scrollTop();
-    // Do something
-    if ($scroll > 450) {
-      $('.btn-scroll').css("visibility","visible")
+    var $width = $(window).width();
+    if ($scroll > 450 && $width < 768) {
+      $('.btn-scroll').css("display","flex")
     } else {
-      $('.btn-scroll').css("visibility","hidden")
+      $('.btn-scroll').css("display","none")
     }
   });
 
-  $(".btn-scroll").on('click', function () {
+  $(".btn-scroll").on('click', function () { //take user to write tweet when click on btn
     $('html').animate({scrollTop : 0}, 300);
     $("#tweet-text").focus();
   })
 
-  $(".nav-btn").on('click', function () {
+  $(".nav-btn").on('click', function () { //same as above, but different btn
     $('html').animate({scrollTop : 0}, 300);
     $("#tweet-text").focus();
   })
 
-  $(".tweet-submit").on('submit', function (event) {
-    event.preventDefault();
-    $(".error").hide()
+  $(".tweet-submit").on('submit', function (event) { // when user write new tweet
+    event.preventDefault(); //stop page from redirect
+    $(".error").hide() //if there is error, hide it
     let $tweet = $(this).children("#tweet-text").val().length;
-    console.log($tweet)
-    if (!$tweet) {
+    if (!$tweet) {//if empty, shown below error
       $(this).children(".error").text("⚠️  Error: Tweet is empty!  ⚠️")
       $(".error").slideDown()
-    } else if ($tweet > 140){
+    } else if ($tweet > 140){//if past limit, shown...ry
       $(this).children(".error").text("⚠️  Error: Excess 140 characters limit!  ⚠️")
       $(".error").slideDown()
-    } else {
-    $.ajax("/tweets", {method: 'POST', data: $(".tweet-submit").serialize()})
+    } else {//if ok, send to server
+    $.ajax("/tweets", {method: 'POST', data: $(".tweet-submit").serialize()})//use ajax to handle request to the server
     .then(function () {
-      $("#tweet-text").val("");
-      loadtweets();
+      $("#tweet-text").val(""); //clear write tweet area
+      loadtweets(); //call to load tweet
       })
     }
   });
 
   const loadtweets = function() {
-    $.ajax("/tweets", {method: 'GET'})
+    $.ajax("/tweets", {method: 'GET'}) //get tweet from server with ajax to prevent reloading
     .then(function (something) {
-      renderTweets(something);})
+      renderTweets(something);}) //call rendering from the data of tweet from server
   }
 
   const renderTweets = function(tweets) {
-    $("#tweet-container").empty();
-    tweets.forEach(info => {
-      $("#tweet-container").prepend(createTweetElement(info));
+    $("#tweet-container").empty(); //clear area
+    tweets.forEach(info => { //for each tweet, then
+      $("#tweet-container").prepend(createTweetElement(info));//put the new tweet on top the old 1
     });
   }
 
   //calculate time
-  const timePass = function(created) {
+  const timePass = function(created) { //think this is pretty english, so just read
     const now = Date.now();
     const pastSec = Math.floor((now - created) / 1000);
     if ((pastSec / 31536000) > 1) {
@@ -141,6 +142,8 @@ $(document).ready(function() {
 
     //construction of effect on bottom
     const $bottomeShadow = $('<div>').addClass('shadow');
+
+    //put all item together as one
     const $completeTweet = $('<div>').addClass('focus_effect')
     .append($sideSpacer)
     .append($bottomeShadow);
@@ -150,5 +153,4 @@ $(document).ready(function() {
   
   //initial tweet load
   loadtweets();
-  $(".error").hide()
 })

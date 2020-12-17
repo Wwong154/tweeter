@@ -43,12 +43,13 @@
   width: 100%;
   height: 100%;
   background-color:  #f4f1ec;
-  flex-direction: column; /**/
+  flex-direction: column; 
   min-height: 200px;
   border: 4px solid #333333;
   justify-content: space-between;
 }
 
+/*the tweet's owner info*/
 .tweet-header {
   display: flex;
   flex-direction: row;
@@ -76,12 +77,14 @@
   align-self: center;
 }
 
+/*only turn visible when hover over on as per project specified*/
 .handleName {
   visibility: hidden;
   color: rgb(150, 150, 150);
   margin-right: 0.5em;
 }
 
+/*the box to draw the border for the tweet, as it should be larger, flexx 99% for styling*/
 .tweet-content {
   display: flex;
   width: 97%;
@@ -92,6 +95,7 @@
   font-weight: 300;
 }
 
+/*content of tweet, used break-word so long word without space won't break box*/
 .tweet-content p{
   width: 95%;
   height: 100%;
@@ -104,6 +108,7 @@
   overflow-wrap: break-word;
 }
 
+/*footer, a bit shorter in width for styling*/
 .tweet-footer {
   display: flex;
   flex-direction: row;
@@ -113,6 +118,7 @@
   margin: 0.5em;
 }
 
+/*exist soley for styling*/
 .footer-wrap {
   display: flex;
   width: 95%;
@@ -122,12 +128,14 @@
   margin: 0%;
 }
 
+/*date of the tweet since post*/
 .tweet-date {
   font-weight: 100;
   font-size: small;
   align-self: center;
 }
 
+/*react-icon container, only shown when hover over on*/
 .react-icon {
   display: flex;
   width: 70px;
@@ -136,10 +144,12 @@
   visibility: hidden;
 }
 
+/*make the size make sense*/
 .react-icon i {
-  font-size: 12px;
+  font-size: smaller;
 }
 
+/*the hover effect, includ shadow around the tweet card, and blod text and shown @name,react icon*/
 .focus_effect:hover > .shadow{
   visibility: visible;
 }

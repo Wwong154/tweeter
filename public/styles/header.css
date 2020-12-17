@@ -1,18 +1,18 @@
-#user_info {
+#user_info { /*user avator area*/
   display: flex;
   height: 400px;
-  width: 31%;
-  flex-direction: column;
+  width: 31%; /*desktop version, takes up this percent of total width on left*/
+  flex-direction: column; /*make pf on top of user name*/
   align-items: center;
   justify-content: center;
   background-color: #d4bb96;
   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
-  margin-left: 2%;
+  margin-left: 2%; /*margin on both side to make it more stylish*/
   margin-right: 2%;
   margin-bottom: -260px; /* half of this and nav total to center */
-  position: fixed;
-  z-index: 1;
-  bottom: 50%;
+  position: fixed; /*fix location for desktop version*/
+  z-index: 1; /*always on front*/
+  bottom: 50%; 
   left: 0;
 }
 
@@ -20,14 +20,14 @@
   font-weight: normal;
 }
 
-.yourName {
+.yourName { /*first name to be bold*/
   text-align: center;
   margin-top: 0px;
   margin-bottom: 0px;
 }
 
 @media only screen and (max-width: 768px) {
-  #user_info {
+  #user_info { /*make header non-fixed when user on moblie*/
     width: 100%;
     margin: 0;
     position: relative;

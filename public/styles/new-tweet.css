@@ -1,8 +1,8 @@
 /* new tweet area*/
 .new-tweet {
   display: flex;
-  width: 100%;
-  margin-top: 0.35em;
+  width: 100%; /*take full length of main*/
+  margin-top: 0.35em; /*styling*/
   margin-bottom: 0.5em;
 }
 
@@ -30,8 +30,7 @@ label {
   border-bottom: 4px solid #333333; /*add line at bottom of textarea*/
   margin-top: .5em;
   margin-bottom: .5em;
-  font-weight: 600;
-  font-size: 20px;
+  font-weight: 400;
   color: #333333;
 }
 
@@ -53,11 +52,13 @@ button {
   font-size: 80%;
 }
 
+/*word counter, couting handled by JQ*/
 .counter {
   color: #333333;
   margin-right: .5em;
 }
 
+/*default error with nothing inside, only shown when JQ pass error over*/
 .error{
   color: #ff392e;
   margin-top: 6px;

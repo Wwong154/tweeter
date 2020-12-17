@@ -8,20 +8,20 @@ nav {
   background-color: #4056A1;
   color: #FFFFFF;
   justify-content: space-between;
-  z-index: 2;
+  z-index: 2;/*always on front*/
+  padding-left: 1.5em;/*Padding on both side, so logo doesn't look ugly*/
+  padding-right: 1.5em;
 }
 
 #logo {
   font-family: 'Bungee';
   align-self: center;
-  margin-left: 1.5em;
 }
 
 /*btn to write tweet, to be added*/
 .nav-btn {
   display: flex;
   flex-direction: column;
-  margin-right: 1.5em;
   justify-content: center;
   cursor: pointer;
 }
@@ -36,15 +36,17 @@ nav {
   font-weight: 700;
 }
 
-/*the down arrow*/
+/*the down arrow under write tweet btn*/
 .nav-btn i {
   height: 15px;
   color: #ff392e;
   align-self: center;
 }
 
+
+/*if user is on moblie device then*/
 @media only screen and (max-width: 768px) {
-  nav {
+  nav { /*make nav bar non-fixed and same background as avator aera*/
     position: relative;
     background-color: #d4bb96;
     background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
