@@ -42,6 +42,7 @@ $(document).ready(function() {
     } else {//if ok, send to server
     $.ajax("/tweets", {method: 'POST', data: $(".tweet-submit").serialize()})//use ajax to handle request to the server
     .then(function () {
+      $("#tweet-text").siblings().children('.counter').text(140)//reset counter
       $("#tweet-text").val(""); //clear write tweet area
       loadtweets(); //call to load tweet
       })
